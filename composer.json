@@ -4,9 +4,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
+        "ext-amqp": "*",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-amqp": "*",
         "doctrine/doctrine-bundle": "^2.6",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
@@ -19,6 +19,7 @@
         "symfony/monolog-bundle": "^3.7",
         "symfony/proxy-manager-bridge": "5.4.*",
         "symfony/runtime": "5.4.*",
+        "symfony/serializer": "5.4.*",
         "symfony/yaml": "5.4.*"
     },
     "config": {
@@ -62,7 +63,8 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "queue:consume": "bin/console messenger:consume async"
     },
     "conflict": {
         "symfony/symfony": "*"

@@ -15,3 +15,10 @@ framework:
         routing:
             # Route your messages to the transports
              'App\Message\LogMessage': async
+
+when@test:
+  framework:
+    messenger:
+      transports:
+        async: 'in-memory://'
+        async_priority_high: 'in-memory://'

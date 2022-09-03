@@ -35,11 +35,11 @@ services:
             - mysql
             - rabbitmq
         networks:
-            - rabbitmq_network
+            - backend_network
 
     mysql:
         image: mysql:8.0
-        container_name: devbox-mysql
+        container_name: mysql
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: root
@@ -48,6 +48,8 @@ services:
             - "3308:3306"
         volumes:
             - database-volume:/var/lib/mysql
+        networks:
+            - backend_network
 
     rabbitmq:
         image: rabbitmq:3.7-management
@@ -59,12 +61,12 @@ services:
             - ~/.docker/rabbitmq/data/:/var/lib/rabbitmq/
             - ~/.docker/rabbitmq/log/:/var/log/rabbitmq
         networks:
-            - rabbitmq_network
+            - backend_network
 
 volumes:
     database-volume:
         driver: "local"
 
 networks:
-    rabbitmq_network:
+    backend_network:
         driver: bridge

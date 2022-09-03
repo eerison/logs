@@ -39,7 +39,17 @@ class ImportLogsCommand extends Command
             return Command::FAILURE;
         }
 
-        $this->messageBus->dispatch(new LogMessage('Look! I created a message!'));
+        $handle = fopen($filePath, 'r');
+        if (!$handle) {
+            $io->error('Problem when tried to read your file.');
+            return Command::FAILURE;
+        }
+
+        while(($line = fgets($handle)) !== false) {
+            $this->messageBus->dispatch(new LogMessage($line));
+        }
+        fclose($handle);
+
         $io->success('Your logs were added into the queue!');
         return Command::SUCCESS;
     }

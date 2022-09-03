@@ -26,7 +26,7 @@ new-container:
 
 .PHONY: new-container
 consume:
-	docker-compose run --rm --user="php" devbox-service bin/console messenger:consume async
+	docker-compose run --rm --user="php" devbox-service composer queue:consume
 
 .PHONY: enter-as-root
 enter-as-root:
