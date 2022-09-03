@@ -33,6 +33,9 @@ services:
             - .env
         depends_on:
             - mysql
+            - rabbitmq
+        networks:
+            - rabbitmq_network
 
     mysql:
         image: mysql:8.0
@@ -46,6 +49,22 @@ services:
         volumes:
             - database-volume:/var/lib/mysql
 
+    rabbitmq:
+        image: rabbitmq:3.7-management
+        container_name: 'rabbitmq'
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        volumes:
+            - ~/.docker/rabbitmq/data/:/var/lib/rabbitmq/
+            - ~/.docker/rabbitmq/log/:/var/log/rabbitmq
+        networks:
+            - rabbitmq_network
+
 volumes:
     database-volume:
         driver: "local"
+
+networks:
+    rabbitmq_network:
+        driver: bridge

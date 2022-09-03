@@ -10,6 +10,14 @@
   respectively
 - Makefile with some basic commands
 
+# Usage
+
+Start queue consume.
+
+```shell
+make consume
+```
+
 ## Installation
 
 ```

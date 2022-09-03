@@ -211,6 +211,9 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.4.11"
+    },
     "symfony/browser-kit": {
         "version": "v5.4.3"
     },
@@ -246,6 +249,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v5.4.6"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.4.12"
     },
     "symfony/dom-crawler": {
         "version": "v5.4.3"
@@ -305,6 +311,27 @@
     "symfony/http-kernel": {
         "version": "v5.4.4"
     },
+    "symfony/maker-bundle": {
+        "version": "1.45",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
+    "symfony/messenger": {
+        "version": "5.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "5.4",
+            "ref": "dfe610928a5c61619bdfc830cd7fa7f091368023"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
     "symfony/monolog-bridge": {
         "version": "v5.4.3"
     },
@@ -357,6 +384,9 @@
         "version": "v1.24.0"
     },
     "symfony/proxy-manager-bridge": {
+        "version": "v5.4.6"
+    },
+    "symfony/redis-messenger": {
         "version": "v5.4.6"
     },
     "symfony/routing": {

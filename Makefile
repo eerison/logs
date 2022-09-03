@@ -20,6 +20,14 @@ stop:
 enter:
 	@docker-compose exec --user="php" devbox-service /bin/sh
 
+.PHONY: new-container
+new-container:
+	@docker-compose run --rm --user="php" devbox-service /bin/sh
+
+.PHONY: new-container
+consume:
+	docker-compose run --rm --user="php" devbox-service bin/console messenger:consume async
+
 .PHONY: enter-as-root
 enter-as-root:
 	@docker-compose exec --user="root" devbox-service /bin/sh

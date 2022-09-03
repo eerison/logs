@@ -33,9 +33,10 @@ RUN set -ex \
     libzip-dev zlib-dev \
     libxml2-dev \
     oniguruma-dev \
-    && pecl install xdebug \
+    rabbitmq-c-dev libssh-dev \
+    && pecl install xdebug amqp \
     && docker-php-ext-install intl opcache pdo_mysql zip bcmath mbstring sockets pcntl soap sockets ctype > /dev/null \
-    && docker-php-ext-enable intl opcache pdo_mysql zip bcmath mbstring sockets pcntl soap sockets ctype \
+    && docker-php-ext-enable intl opcache pdo_mysql zip bcmath mbstring sockets pcntl soap sockets ctype amqp \
     && apk del ${PHPIZE_DEPS} \
     && docker-php-source delete
 
