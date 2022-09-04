@@ -59,9 +59,13 @@
         "ensure-db-exists":{
             "db": "bin/console doctrine:database:create  --if-not-exists"
         },
+        "db:migrations": "bin/console doctrine:migrations:migrate",
+        "es:populate": "bin/console fos:elastica:populate",
         "post-install-cmd": [
             "@auto-scripts",
-            "@ensure-db-exists"
+            "@ensure-db-exists",
+            "@db:migrations",
+            "@es:populate"
         ],
         "post-update-cmd": [
             "@auto-scripts"

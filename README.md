@@ -39,17 +39,15 @@ bin/console app:import-logs tests/Resources/logs.txt
 ### Populate Elastic search
 
 ```
-bin/console fos:elastica:populate
+composer es:populate
 ```
 
 - it can be handled automatically By fos elastica, But I didn't invest time trying to configure it.
 
 ### Test on Browser
 
-- url to test: `http://localhost:9002/log/count?serviceName=USER-SERVICE&startDate=2021-02-08&endDate=2021-08-18&httpStatusCode=400`
-
-```shell
-make consume
+```
+http://localhost:9002/log/count?serviceName=USER-SERVICE&startDate=2021-02-08&endDate=2021-08-18&httpStatusCode=400
 ```
 
 ## Installation
