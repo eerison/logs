@@ -12,7 +12,7 @@
 
 # Usage
 
-Start queue consume.
+- url to test: `http://localhost:9002/log/count?serviceName=USER-SERVICE&startDate=2021-02-08&endDate=2021-08-18&httpStatusCode=400`
 
 ```shell
 make consume

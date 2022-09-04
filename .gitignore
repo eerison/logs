@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 .htpasswd
+tests/Resources/logs_big.txt
 
 ###> symfony/framework-bundle ###
 /.env.local

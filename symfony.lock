@@ -77,8 +77,20 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+    "elasticsearch/elasticsearch": {
+        "version": "v8.4.1"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.7"
+    },
+    "friendsofsymfony/elastica-bundle": {
+        "version": "6.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "5.0",
+            "ref": "46c9cd2c1e07f0fcfd97e96f12b03b2e0845c4cd"
+        }
     },
     "laminas/laminas-code": {
         "version": "4.5.1"
@@ -97,15 +109,6 @@
     },
     "phar-io/version": {
         "version": "3.1.1"
-    },
-    "phpdocumentor/reflection-common": {
-        "version": "2.2.0"
-    },
-    "phpdocumentor/reflection-docblock": {
-        "version": "5.3.0"
-    },
-    "phpdocumentor/type-resolver": {
-        "version": "1.6.0"
     },
     "phpspec/prophecy": {
         "version": "v1.15.0"
@@ -383,6 +386,12 @@
     "symfony/polyfill-php81": {
         "version": "v1.24.0"
     },
+    "symfony/property-access": {
+        "version": "v5.4.11"
+    },
+    "symfony/property-info": {
+        "version": "v5.4.11"
+    },
     "symfony/proxy-manager-bridge": {
         "version": "v5.4.6"
     },
@@ -428,8 +437,5 @@
     },
     "theseer/tokenizer": {
         "version": "1.2.1"
-    },
-    "webmozart/assert": {
-        "version": "1.10.0"
     }
 }

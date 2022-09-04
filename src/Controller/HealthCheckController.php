@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HealthCheckController
 {
-    #[Route('/healthz', methods: ['GET'])]
+    #[Route('/healthcheck', methods: ['GET'])]
     public function index(): Response
     {
         return new Response('LGTM 👍');

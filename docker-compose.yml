@@ -14,6 +14,8 @@ services:
         restart: unless-stopped
         depends_on:
             - devbox-service
+        networks:
+            - backend_network
 
     devbox-service:
         container_name: devbox-service
@@ -34,6 +36,7 @@ services:
         depends_on:
             - mysql
             - rabbitmq
+            - elasticsearch
         networks:
             - backend_network
 
@@ -60,6 +63,16 @@ services:
         volumes:
             - ~/.docker/rabbitmq/data/:/var/lib/rabbitmq/
             - ~/.docker/rabbitmq/log/:/var/log/rabbitmq
+        networks:
+            - backend_network
+
+    elasticsearch:
+        image: elasticsearch:7.17.6
+        environment:
+            "discovery.type": single-node
+        ports:
+            -   "9200:9200"
+            -   "9300:9300"
         networks:
             - backend_network
 

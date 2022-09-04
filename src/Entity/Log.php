@@ -32,6 +32,11 @@ class Log
     #[ORM\Column(type: Types::STRING)]
     private string $url;
 
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
     public function getServiceName(): string
     {
         return $this->serviceName;

@@ -19,12 +19,6 @@ class LogMessageHandler implements MessageHandlerInterface
         $logRow = $message->getRow();
         $log = $this->logStringParse->parse($logRow);
 
-        /**
-         * TODO here there is a problem, because for each log I'm going persisting into the database, in other words it will be like a DDOS attack to my database.
-         *      What I thought to solve this is:
-         *          let this handler to parse the logs and somehow create chunks into the queue(e.g 10k logs per chunk, it's just an example I can get this from .env),
-         *          and create other Handler to consume those chunks and save into the database.
-         */
         $this->logRepository->persist($log);
         $this->logRepository->flush();
     }

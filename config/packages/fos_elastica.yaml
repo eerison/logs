@@ -1,0 +1,22 @@
+fos_elastica:
+  clients:
+    default: { host: '%env(ES_HOST)%', port: '%env(ES_PORT)%' }
+  indexes:
+    log:
+      index_name: app
+      persistence:
+        # the driver can be orm, mongodb or phpcr
+        driver: orm
+        model: App\Entity\Log
+        provider: ~
+        finder: ~
+      properties:
+        id:
+          type: integer
+        serviceName:
+          type: keyword
+        date:
+          type: date
+        httpMethod: ~
+        httpStatusCode: ~
+        url: ~
